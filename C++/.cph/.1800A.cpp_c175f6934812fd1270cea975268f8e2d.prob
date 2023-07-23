@@ -1,0 +1,1 @@
+{"name":"Local: 1800A","url":"c:\\Users\\qdath\\Data\\C++\\1800A.cpp","tests":[{"id":1677768229389,"input":"7\n4\nMeee\n14\nmMmeoOoWWWwwwW\n3\nmew\n7\nMmeEeUw\n4\nMEOW\n6\nMmyaVW\n5\nmeowA","output":"YES\nYES\nNO\nNO\nYES\nNO\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\1800A.cpp","group":"local","local":true}

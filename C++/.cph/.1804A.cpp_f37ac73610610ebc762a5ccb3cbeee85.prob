@@ -1,0 +1,1 @@
+{"name":"Local: 1804A","url":"c:\\Users\\qdath\\Data\\C++\\1804A.cpp","tests":[{"id":1684840049168,"input":"5\n-4 1\n4 4\n0 -6\n-5 -4\n7 -8","output":"7\n8\n11\n9\n15"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\1804A.cpp","group":"local","local":true}

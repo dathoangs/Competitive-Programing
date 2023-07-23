@@ -1,0 +1,1 @@
+{"name":"Local: 1793B","url":"c:\\Users\\qdath\\Data\\C++\\1793B.cpp","tests":[{"id":1676699113298,"input":"1\n3 -2","output":"3 2 1 0 -1 -2 -1 0 1 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\1793B.cpp","group":"local","local":true}

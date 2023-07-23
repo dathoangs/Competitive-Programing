@@ -1,0 +1,1 @@
+{"name":"Local: 1825A","url":"c:\\Users\\qdath\\Data\\C++\\1825A.cpp","tests":[{"id":1684397427198,"input":"4\nabacaba\naaa\ncodeforcesecrofedoc\nlol\n","output":"6\n-1\n18\n2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\1825A.cpp","group":"local","local":true}

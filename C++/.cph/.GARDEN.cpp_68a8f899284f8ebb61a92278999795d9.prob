@@ -1,0 +1,1 @@
+{"name":"Local: GARDEN","url":"c:\\Users\\qdath\\Data\\C++\\GARDEN.cpp","tests":[{"id":1678937949878,"input":"3\n1 1\n2 2\n3 1","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\GARDEN.cpp","group":"local","local":true}

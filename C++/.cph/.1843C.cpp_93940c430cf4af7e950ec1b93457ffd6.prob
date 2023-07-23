@@ -1,0 +1,1 @@
+{"name":"Local: 1843C","url":"c:\\Users\\qdath\\Data\\C++\\1843C.cpp","tests":[{"id":1687274178751,"input":"6\n3\n10\n37\n1\n10000000000000000\n15","output":"4\n18\n71\n1\n19999999999999980\n26"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\1843C.cpp","group":"local","local":true}

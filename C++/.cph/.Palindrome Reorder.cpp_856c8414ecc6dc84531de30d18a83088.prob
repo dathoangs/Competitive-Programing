@@ -1,0 +1,1 @@
+{"name":"Local: Palindrome Reorder","url":"c:\\Users\\qdath\\Data\\C++\\Palindrome Reorder.cpp","tests":[{"id":1679727665425,"input":"AAAACACBA","output":"AACABACAA"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\Palindrome Reorder.cpp","group":"local","local":true}

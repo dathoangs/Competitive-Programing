@@ -1,0 +1,1 @@
+{"name":"Local: 1810B","url":"c:\\Users\\qdath\\Data\\C++\\1810B.cpp","tests":[{"id":1684419257423,"input":"4\n2\n3\n7\n17\n","output":"-1\n1\n2 \n2\n2 2 \n4\n2 1 1 1 \n"},{"id":1684419503426,"input":"1\n11","output":"3\n2 1 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\1810B.cpp","group":"local","local":true}

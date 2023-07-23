@@ -1,0 +1,1 @@
+{"name":"Local: LETTERS","url":"c:\\Users\\qdath\\Data\\C++\\LETTERS.cpp","tests":[{"id":1678939300463,"input":"6\na?a?bb\n","output":"1\n"},{"id":1678939315557,"input":"5\nb????","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\LETTERS.cpp","group":"local","local":true}

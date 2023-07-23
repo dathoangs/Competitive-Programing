@@ -1,0 +1,1 @@
+{"name":"Local: 1840A","url":"c:\\Users\\qdath\\Data\\C++\\1840A.cpp","tests":[{"id":1686062464200,"input":"3\n8\nabacabac\n5\nqzxcq\n20\nccooddeeffoorrcceess\n","output":"ac\nq\ncodeforces\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\1840A.cpp","group":"local","local":true}

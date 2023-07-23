@@ -1,0 +1,1 @@
+{"name":"Local: 1832A","url":"c:\\Users\\qdath\\Data\\C++\\1832A.cpp","tests":[{"id":1684419983586,"input":"3\ncodedoc\ngg\naabaa\n","output":"YES\nNO\nNO\n"},{"id":1684420949248,"input":"1\naabbaa","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\C++\\1832A.cpp","group":"local","local":true}
