@@ -19,35 +19,30 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, c;
+        ll n, mx1 = INT16_MIN, mx2 = INT16_MIN;
 
-        cin >> n >> c;
+        cin >> n;
 
-        ll a[n];
+        ll a[n], tmp[n];
 
         fore (i,0,n){
             cin >> a[i];
+            tmp[i] = a[i];
         }
 
-        ll l = 1, r = 1000000000, m = (l+r)/2;
-        while (l < r){
-            ull res = 0;
+        sort (tmp, tmp+n);
 
-            fore (i,0,n){
-                res += (ull)(a[i]+2*m)*(a[i]+2*m);
-                if (res > c) break;
-            }
+        mx1 = tmp[n-1];
+        mx2 = tmp[n-2];
 
-            if (res == c){
-                cout << m << nl;
-                break;
-            } else if (res > c){
-                r = m;
-                m = (l+r)/2;
+        fore (i,0,n){
+            if (a[i] == mx1){
+                cout << mx1 - mx2 << " ";
             } else {
-                l = m+1;
-                m = (l+r)/2;                
+                cout << a[i] - mx1<< " ";
             }
         }
+
+        cout << nl;
     }
 }

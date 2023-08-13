@@ -26,29 +26,66 @@ int main() {
         
         n = n-1;
 
-        vector <ll> a(n), real;
+        vector <ll> a(n);
 
         fore (i,0,n){
             cin >> a[i];
         }
 
         if (a[n-1] > bigg){
-            cout << no;
+            cout << no; 
             continue;
         }
 
         if (a[n-1] < bigg){
-            a.pb(bigg);
-        } else {
             map <ll, bool> mp;
+            a.pb(bigg);
+            bool chk = true;
+            
+            for (int i = n; i > 0; i--){
+                if (mp[a[i] - a[i-1]] || a[i] - a[i-1] > n+1){
+                    chk = false;
+                    break;
+                } else mp[a[i] - a[i-1]] = true;
+            }
 
-            for (int i = n-1; i>0; i--){
-                if (a[i] - a[i-1] > n){
-                    
+            if (chk) cout << yes ;
+            else cout << no;
+        } else {
+            map <ll, int> mp;    
+            bool chk = false; 
+            ll count = 0, count2 = 0, temp = 0;
+
+            mp[a[0]]++;
+            for (int i = n-1; i > 0; i--){
+                mp[a[i] - a[i-1]]++;
+                
+                if (mp[a[i] - a[i-1]] == 2 || a[i] - a[i-1] > n+1) {
+                    count++;
+                    // cout << a[i] - a[i-1];
+                    temp = a[i] - a[i-1];
+                }               
+
+                if (mp[a[i] - a[i-1]] > 2 || count > 2) {chk = true; break;}
+            }
+
+            if (chk) {cout << no; continue;}
+
+            ll m1 = 0, m2 = 0;
+            for (int i = 1; i<n+2; i++){
+                if (mp[i] == 0){
+                    if (m1 == 0) m1 = i;
+                    else {
+                        m2 = i;
+                        break;
+                    }
                 }
-            }            
-        }
+            }
 
+            if (m1 + m2 == temp || temp == 0) cout << yes;
+            else cout << no;
+
+        }
 
     }
 }

@@ -14,11 +14,21 @@
 using namespace std;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cout.tie(0); cin.tie(0);
+    ios::sync_with_stdio(0);
+    cout.tie(0); cin.tie(0);
 
-	ll t; cin >> t;
-	while (t--){
-		
-	}
+    ll t; cin >> t;
+    while (t--){
+        ll b, c, h;
+
+        cin >> b >> c >> h;
+
+        c += h;
+
+        if (b-1 >= c){
+            cout << 2*c +1 << nl;
+        } else {
+            cout << 2*(b-1) +1 << nl;
+        }
+    }
 }

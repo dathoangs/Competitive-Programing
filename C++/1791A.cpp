@@ -14,11 +14,26 @@
 using namespace std;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cout.tie(0); cin.tie(0);
+    ios::sync_with_stdio(0);
+    cout.tie(0); cin.tie(0);
 
-	ll t; cin >> t;
-	while (t--){
-		
-	}
+    map <char, bool> mp;
+
+    mp['c'] = true;
+    mp['o'] = true;
+    mp['d'] = true;
+    mp['e'] = true;
+    mp['f'] = true;
+    mp['r'] = true;
+    mp['s'] = true;
+
+    ll t; cin >> t;
+    while (t--){
+        char c;
+
+        cin >> c;
+
+        if (mp[c]) cout << yes;
+        else cout << no;
+    }
 }

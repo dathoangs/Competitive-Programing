@@ -19,35 +19,29 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, c;
+        ll n;
+        string s;
 
-        cin >> n >> c;
+        cin >> n >> s;
 
-        ll a[n];
+        ll x = 0, y = 0;
+        bool chk = false;
 
         fore (i,0,n){
-            cin >> a[i];
-        }
+            if (s[i] == 'L') x--;
+            if (s[i] == 'R') x++;
+            if (s[i] == 'U') y++;
+            if (s[i] == 'D') y--;         
 
-        ll l = 1, r = 1000000000, m = (l+r)/2;
-        while (l < r){
-            ull res = 0;
+            // cout << x << " " << y << nl;
 
-            fore (i,0,n){
-                res += (ull)(a[i]+2*m)*(a[i]+2*m);
-                if (res > c) break;
-            }
-
-            if (res == c){
-                cout << m << nl;
+            if (x == 1 && y == 1){
+                chk = true;
                 break;
-            } else if (res > c){
-                r = m;
-                m = (l+r)/2;
-            } else {
-                l = m+1;
-                m = (l+r)/2;                
-            }
+            }   
         }
+
+        if (chk) cout << yes;
+        else cout << no;
     }
 }

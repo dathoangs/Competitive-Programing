@@ -19,35 +19,24 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, c;
+        ll n, total = 0;
 
-        cin >> n >> c;
+        cin >> n;
+
+        map <ll, ll> mp;
 
         ll a[n];
 
         fore (i,0,n){
             cin >> a[i];
-        }
-
-        ll l = 1, r = 1000000000, m = (l+r)/2;
-        while (l < r){
-            ull res = 0;
-
-            fore (i,0,n){
-                res += (ull)(a[i]+2*m)*(a[i]+2*m);
-                if (res > c) break;
-            }
-
-            if (res == c){
-                cout << m << nl;
-                break;
-            } else if (res > c){
-                r = m;
-                m = (l+r)/2;
-            } else {
-                l = m+1;
-                m = (l+r)/2;                
+            if (a[i] == 1) mp[1]++;
+            else if (a[i] == 2) mp[2]++;
+            else {
+                mp[2] += a[i]-1;
             }
         }
+
+        if (mp[1] > mp[2] || n==1) cout << no;
+        else cout << yes;
     }
 }

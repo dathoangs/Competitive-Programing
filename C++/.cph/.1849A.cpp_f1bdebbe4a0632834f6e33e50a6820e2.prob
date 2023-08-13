@@ -1,0 +1,1 @@
+{"name":"Local: 1849A","url":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1849A.cpp","tests":[{"id":1690468895694,"input":"3\n2 1 1\n10 1 2\n3 7 8\n","output":"3\n7\n5\n"},{"id":1690469060954,"input":"1\n4 3 0","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1849A.cpp","group":"local","local":true}

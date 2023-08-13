@@ -14,11 +14,22 @@
 using namespace std;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cout.tie(0); cin.tie(0);
+    ios::sync_with_stdio(0);
+    cout.tie(0); cin.tie(0);
 
-	ll t; cin >> t;
-	while (t--){
-		
-	}
+    ll t; cin >> t;
+    while (t--){
+        ll n, ans = 0;
+        string s;
+
+        cin >> n >> s;
+
+        fore (i,0,n){
+            if (ans < (ll)s[i]){
+                ans = (ll)s[i];
+            }
+        }
+
+        cout << ans - 'a' + 1<< nl;
+    }
 }

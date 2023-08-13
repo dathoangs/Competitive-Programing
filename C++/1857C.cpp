@@ -14,11 +14,26 @@
 using namespace std;
 
 int main() {
-	ios::sync_with_stdio(0);
-	cout.tie(0); cin.tie(0);
+    ios::sync_with_stdio(0);
+    cout.tie(0); cin.tie(0);
 
-	ll t; cin >> t;
-	while (t--){
-		
-	}
+    ll t; cin >> t;
+    while (t--){
+        ll n, nn;
+        cin >> n;
+
+        nn = (n*(n-1))/2;
+        ll b[nn];
+        vector <ll> a(n, 0);
+
+        fore (i,0,nn){
+            cin >> b[i];
+        }
+
+        ll tmp = n-1;
+
+        fore (i,1,n){
+            
+        }
+    }
 }

@@ -19,35 +19,22 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, c;
-
-        cin >> n >> c;
+        ll n;
+        cin >> n;
 
         ll a[n];
 
         fore (i,0,n){
             cin >> a[i];
         }
-
-        ll l = 1, r = 1000000000, m = (l+r)/2;
-        while (l < r){
-            ull res = 0;
-
-            fore (i,0,n){
-                res += (ull)(a[i]+2*m)*(a[i]+2*m);
-                if (res > c) break;
-            }
-
-            if (res == c){
-                cout << m << nl;
-                break;
-            } else if (res > c){
-                r = m;
-                m = (l+r)/2;
-            } else {
-                l = m+1;
-                m = (l+r)/2;                
-            }
+        
+        ll res = 0;
+        fore (i,1,n){
+            res += a[i];
         }
+
+        if ((res & 1) == (a[0] & 1)){
+            cout << yes;
+        } else cout << no;
     }
 }
