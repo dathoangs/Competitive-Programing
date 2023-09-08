@@ -19,21 +19,25 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, m;
-
+        ll n;
         cin >> n;
-        m = (n*(n-1))/2;
 
-        ll a[m];
+        vector <ll> a(n);
 
-        fore (i,0,m) cin >> a[i];
-
-        sort (a, a+m);
-
-        for (int i = 0; i<m; i+= --n){
-            cout << a[i] << " ";
+        fore (i,0,n){
+            cin >> a[i];
         }
 
-        cout << 1000000000 << nl;
+        bool chk = true;
+        fore (i,0,n){
+            if (upper_bound(a.begin(), a.end(), i+1, greater<ll>()) - a.begin() != a[i]){
+                chk = false;
+                break;
+            }
+        }
+
+        if (chk) cout << yes;
+        else cout << no;
     }
+
 }

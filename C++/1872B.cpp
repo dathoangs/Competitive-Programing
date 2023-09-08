@@ -19,21 +19,11 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, m;
-
+        ll n;
         cin >> n;
-        m = (n*(n-1))/2;
 
-        ll a[m];
+        ll d[n], s[n];
 
-        fore (i,0,m) cin >> a[i];
-
-        sort (a, a+m);
-
-        for (int i = 0; i<m; i+= --n){
-            cout << a[i] << " ";
-        }
-
-        cout << 1000000000 << nl;
+        
     }
 }

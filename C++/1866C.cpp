@@ -13,27 +13,29 @@
 #define no "NO\n"
 using namespace std;
 
+vector <ll> Z, S;
+vector <vector<ll>> L, W;
+
+// dfs from vertex i
+void dfs(int i) {
+    // iterate each edge of vertex i that is directed away from it
+    for(int j = 1; j <= S[i]; j++) {
+        Z.push_back(W[i][j]); // add the integer in the edge to the end of Z
+        dfs(L[i][j]); // recurse to the next vertex
+    }
+}
+
 int main() {
     ios::sync_with_stdio(0);
     cout.tie(0); cin.tie(0);
 
     ll t; cin >> t;
     while (t--){
-        ll n, m;
-
+        ll n;
         cin >> n;
-        m = (n*(n-1))/2;
 
-        ll a[m];
-
-        fore (i,0,m) cin >> a[i];
-
-        sort (a, a+m);
-
-        for (int i = 0; i<m; i+= --n){
-            cout << a[i] << " ";
+        fore (i,0,n){
+            
         }
-
-        cout << 1000000000 << nl;
     }
 }

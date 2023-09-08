@@ -19,21 +19,20 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, m;
-
+        ll n, tmp, mn = INT_MAX, win = INT_MAX, ans = 0;
         cin >> n;
-        m = (n*(n-1))/2;
 
-        ll a[m];
+        fore (i,0,n){
+            cin >> tmp;
 
-        fore (i,0,m) cin >> a[i];
+            if (tmp > mn && tmp < win){
+                ans++;
+                win = tmp;
+            }
 
-        sort (a, a+m);
-
-        for (int i = 0; i<m; i+= --n){
-            cout << a[i] << " ";
+            mn = min(mn, tmp);
         }
 
-        cout << 1000000000 << nl;
+        cout << ans << nl;
     }
 }

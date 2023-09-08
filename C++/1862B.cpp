@@ -19,21 +19,32 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, m;
-
+        ll n;
         cin >> n;
-        m = (n*(n-1))/2;
 
-        ll a[m];
+        ll a[n];
+        vector <ll> ans;
 
-        fore (i,0,m) cin >> a[i];
-
-        sort (a, a+m);
-
-        for (int i = 0; i<m; i+= --n){
-            cout << a[i] << " ";
+        fore (i,0,n){
+            cin >> a[i];
         }
 
-        cout << 1000000000 << nl;
+        ans.pb(a[0]);
+
+        fore (i,1,n){
+            ans.pb(a[i]);
+            
+            if (a[i] < a[i-1]){
+                ans.pb(a[i]);
+            }
+        }
+
+        ll m = ans.size();
+
+        cout << m << nl;
+        fore (i,0,m){
+            cout << ans[i] << " ";
+        }
+        cout << nl;
     }
 }

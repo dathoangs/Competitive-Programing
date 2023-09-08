@@ -19,21 +19,14 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, m;
+        ll a, b, c, small;
+        double half;
+        cin >> a >> b >> c;
 
-        cin >> n;
-        m = (n*(n-1))/2;
+        small = min(a, b);
+        half = (a+b)/2.0;
 
-        ll a[m];
+        cout << ceil((half - small)/c) << nl;
 
-        fore (i,0,m) cin >> a[i];
-
-        sort (a, a+m);
-
-        for (int i = 0; i<m; i+= --n){
-            cout << a[i] << " ";
-        }
-
-        cout << 1000000000 << nl;
     }
 }

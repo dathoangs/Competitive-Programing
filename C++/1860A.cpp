@@ -19,21 +19,29 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, m;
+        ll n;
+        string s, ans = "";
 
-        cin >> n;
-        m = (n*(n-1))/2;
+        cin >> s;
+        n = s.length();
 
-        ll a[m];
-
-        fore (i,0,m) cin >> a[i];
-
-        sort (a, a+m);
-
-        for (int i = 0; i<m; i+= --n){
-            cout << a[i] << " ";
+        fore (i,0,n){
+            ans += "()";
         }
 
-        cout << 1000000000 << nl;
+        if (ans.find(s) != string::npos){
+            ans = "";
+
+            fore(i,0,n){
+                ans += '(';
+            }
+
+            fore(i,0,n){
+                ans += ')';
+            }            
+        }
+
+        if (ans.find(s) != string::npos) cout << no;
+        else cout << yes << ans << nl;
     }
 }
