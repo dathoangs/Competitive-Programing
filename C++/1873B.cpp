@@ -19,9 +19,8 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n, k, q, tmp, ans = 0;
-
-        cin >> n >> k >> q;
+        ll n, max1 = 0, max2 = 0;
+        cin >> n;
 
         ll a[n];
 
@@ -29,26 +28,18 @@ int main() {
             cin >> a[i];
         }
 
-        fore (i,0,n){
-            if (a[i] > q) continue;
+        sort (a, a+n);
 
-            fore (j,i,n){
-                if (a[j] > q || j == n-1){
-                    tmp = j-i;
-                    
-                    if (a[j] <= q) tmp++;
-                    
-                    if (tmp < k) break;
-
-                    if (tmp == k) ans++;
-                    else ans += (tmp - k + 1) * (tmp - k + 2) / 2;
-                    
-                    i = j;
-                    break;
-                }
-            }
+        max1 = a[0]+1;
+        fore (i,1,n){
+            max1 *= a[i];
         }
 
-        cout << ans << nl;
+        fore (i,0,n-1){
+            max2 *= a[i];
+        }
+        max2 *= a[n-1]+1;
+
+        cout << max(max1, max2) << nl;
     }
 }

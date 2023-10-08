@@ -1,0 +1,1 @@
+{"name":"Local: 1759B","url":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1759B.cpp","tests":[{"id":1694660186848,"input":"5\n3 13\n3 1 4\n1 1\n1\n3 3\n1 4 2\n2 1\n4 3\n5 6\n1 2 3 4 5\n","output":"YES\nNO\nYES\nNO\nYES\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1759B.cpp","group":"local","local":true}

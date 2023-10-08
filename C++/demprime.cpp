@@ -17,11 +17,8 @@ int main() {
     ios::sync_with_stdio(0);
     cout.tie(0); cin.tie(0);
 
-    ll t; cin >> t;
-    while (t--){
-        ll n, k, q, tmp, ans = 0;
-
-        cin >> n >> k >> q;
+        int n, ans = 0;
+        cin >> n;
 
         ll a[n];
 
@@ -29,26 +26,19 @@ int main() {
             cin >> a[i];
         }
 
-        fore (i,0,n){
-            if (a[i] > q) continue;
+        for (int i = 0; i<n; i++){
+            bool chk = true;
 
-            fore (j,i,n){
-                if (a[j] > q || j == n-1){
-                    tmp = j-i;
-                    
-                    if (a[j] <= q) tmp++;
-                    
-                    if (tmp < k) break;
-
-                    if (tmp == k) ans++;
-                    else ans += (tmp - k + 1) * (tmp - k + 2) / 2;
-                    
-                    i = j;
+            for(int j = 2; j*j <= a[i]; j++){
+                if(a[i] % j != 0){
+                    chk = false;
                     break;
                 }
             }
+
+            if (chk) ans++;
         }
 
-        cout << ans << nl;
-    }
+        cout << ans;
+    
 }

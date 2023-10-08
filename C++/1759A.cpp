@@ -1,3 +1,5 @@
+#pragma GCC optimize("O3,unroll-loops")
+#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #include <bits/stdc++.h>
 #define ll long long
 #define ull unsigned long long
@@ -6,56 +8,50 @@
 #define rall(a) a.rbegin(),a.rend()
 #define fore(i,b,a) for(int i = b; i<a; i++)
 #define null NULL
-#define endln "\n"
+#define nl '\n'
+#define yes "YES\n"
+#define no "NO\n"
 using namespace std;
 
 int main() {
-	// freopen("input", "r", stdin);
 	ios::sync_with_stdio(0);
 	cout.tie(0); cin.tie(0);
 
-	ll t;
-	cin >> t ;
-
+	ll t; cin >> t;
 	while (t--){
-		bool chk = false;
 		string s;
-
 		cin >> s;
 
-		if (s[0] != 'Y' && s[0] != 'e' && s[0] != 's'){
-			chk = true;
-		}		
-
-		fore(i,0,s.length()-1){
-			if (s[i] != 'Y' && s[i] != 'e' && s[i] != 's'){
-				chk = true;
-				break;
-			}
-
-			if (s[i] == 'Y' && s[i+1] != 'e'){
-				chk = true;
-				break;
-			}
-
-			if (s[i] == 'e' && s[i+1] != 's'){
-				chk = true;
-				break;
-			}
-
-			if (s[i] == 's' && s[i+1] != 'Y'){
-				chk = true;
-				break;
-			}
+		if (s[0] != 'e' && s[0] != 's' && s[0] != 'Y') {
+			cout << no;
+			continue;
 		}
 
-		if (chk){
-			cout << "NO" << endln;
-		} else {
-			cout << "YES" << endln;
+		char pre = s[0];
+		bool chk = true;
+
+		fore (i,1,s.length()){
+			if (pre == 'Y' && s[i] == 'e') {
+				pre = s[i];
+				continue;
+			}
+
+			if (pre == 'e' && s[i] == 's') {
+				pre = s[i];
+				continue;
+			}
+
+			if (pre == 's' && s[i] == 'Y') {
+				pre = s[i];
+				continue;
+			}			
+
+			
+			chk = false;
+			break;			
 		}
+
+		if (chk) cout << yes;
+		else cout << no;
 	}
-
-	cout << endln;
-	return 0;	
 }
