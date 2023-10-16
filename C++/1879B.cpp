@@ -1,6 +1,12 @@
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #include <bits/stdc++.h>
+
+struct Point {
+    int x = 0;
+    int y = 0;
+};
+
 #define ll long long
 #define ull unsigned long long
 #define pb push_back
@@ -13,14 +19,27 @@
 #define no "NO\n"
 using namespace std;
 
+double dist(const Point &a, const Point &b) {
+    return std::hypot(a.x - b.x, a.y - b.y);
+}
+
 int main() {
     ios::sync_with_stdio(0);
     cout.tie(0); cin.tie(0);
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
+        ll n;
+
+        cin >> n;
+
+        ll a[n], b[n];
+
+        fore (i,0,n){
+            cin >> a[i];
+        }
+
+        fore (i,0,n) cin >> b[i];
 
         
     }

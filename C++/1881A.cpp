@@ -19,31 +19,32 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll n;
-        cin >> n;
+        ll n, m;
+        cin >> n >> m;
 
-        ll d[n], s[n];
+        string x, s;
 
-        fore (i,0,n){
-            cin >> d[i] >> s[i];
-        }
+        cin >> x >> s;
 
-        bool chk;
-        int k;
-        for (k = 300; k>0; k--){
+        ll ans = 0;
+        bool chk = false;
+
+        if (x.find(s) != string::npos){
             chk = true;
-            fore (i,0,n){
-                if (s[i] <= 2*(k-d[i])){
-                    chk = false;
-                    break;
-                }
-            }
+        } else {
+            do {
+                x.append(x);
+                ans++;
 
-            if (chk){
-                break;
-            }
+                if (x.find(s) != string::npos){
+                    chk = true;
+                    break;
+                }                
+            } while (x.length() < 2*s.length());
         }
 
-        cout << k << nl;
+        if (chk){
+            cout << ans << nl;
+        } else cout << -1 << nl;
     }
 }

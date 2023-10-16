@@ -19,9 +19,21 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
+        ll n, k, ans = 0;
+        cin >> n >> k;
 
-        
+        map <pair<ll, ll>, bool> mpx, mpy, mpz;
+
+        ll x, y, z;
+        while (k--){
+            cin >> x >> y >> z;
+            ans += n;
+
+            if (y == 0){
+                if (mpy[{x, z}] == false){
+                    
+                }
+            }
+        }
     }
 }

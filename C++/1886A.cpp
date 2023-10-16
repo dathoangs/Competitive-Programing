@@ -19,9 +19,20 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
+        ll n;
 
+        cin >> n;
         
+        if (n-3 == 2 || n-3 == 1 || n-3 == 3 || n-3 == 6 || n <= 3) cout << no;
+        else {
+            if ((n-3) % 3 != 0){
+                cout << yes;
+                cout << 1 << " " << 2 << " " << n-3 << nl;
+            } else {
+                cout << yes;
+                cout << 1 << " " << 4 << " " << n-5 << nl;
+            }           
+        }
+
     }
 }

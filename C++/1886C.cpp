@@ -19,8 +19,11 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
+        string s;
+        cin >> s;
+
+        ll pos;
+        cin >> pos;
 
         
     }

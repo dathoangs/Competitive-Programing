@@ -1,0 +1,1 @@
+{"name":"Local: 1886B","url":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1886B.cpp","tests":[{"id":1696867275898,"input":"2\n3 3\n1 0\n-1 6\n3 3\n-1 -1\n4 3","output":"3.6055512755\n3.2015621187"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1886B.cpp","group":"local","local":true}

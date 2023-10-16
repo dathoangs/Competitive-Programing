@@ -19,8 +19,14 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
+        ll n;
+        cin >> n;
+
+        ll a[n];
+
+        fore (i,0,n){
+            cin >> a[i];
+        }
 
         
     }

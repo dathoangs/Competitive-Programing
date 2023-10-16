@@ -1,5 +1,3 @@
-#pragma GCC optimize("O3,unroll-loops")
-#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #include <bits/stdc++.h>
 #define ll long long
 #define ull unsigned long long
@@ -17,33 +15,35 @@ int main() {
     ios::sync_with_stdio(0);
     cout.tie(0); cin.tie(0);
 
-    ll t; cin >> t;
+    ll t; t = 1;
+
+    
     while (t--){
         ll n;
         cin >> n;
 
-        ll d[n], s[n];
+        ll a[n];
+        map <ll, ll> mp;
 
         fore (i,0,n){
-            cin >> d[i] >> s[i];
+            cin >> a[i];
         }
 
-        bool chk;
-        int k;
-        for (k = 300; k>0; k--){
-            chk = true;
-            fore (i,0,n){
-                if (s[i] <= 2*(k-d[i])){
-                    chk = false;
-                    break;
+        fore (i,0,n){
+            if (mp[a[i]] != 0) continue;
+            
+            fore (j,0,n-1){
+                if (j == i) continue;
+                fore (k,j+1,n){
+                    if (__gcd(a[j], a[k]) % (2*a[i]) == 0){
+                        mp[a[i]]++;
+                    } 
                 }
             }
-
-            if (chk){
-                break;
-            }
         }
 
-        cout << k << nl;
+        fore (i,0,n){
+            cout << mp[a[i]] << " ";
+        }
     }
 }

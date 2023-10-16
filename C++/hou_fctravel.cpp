@@ -13,15 +13,31 @@
 #define no "NO\n"
 using namespace std;
 
+vector <ll> g[30005];
+bool chk = false;
+map <ll, bool> visited;
+
+void dfs(ll n, ll des){
+	if (n == des){
+		chk = true;
+		return;
+	}
+
+	if (!visited[n]){
+		visited[n] = true;
+		for (int i = 0; i<g[n].size(); i++){
+			dfs(g[n][i], des);				
+		}		
+	}
+	return;
+}
+
 int main() {
     ios::sync_with_stdio(0);
     cout.tie(0); cin.tie(0);
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
-
         
     }
 }

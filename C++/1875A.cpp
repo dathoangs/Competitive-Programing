@@ -19,9 +19,16 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
+        ll a, b, n, ans, tmp;
 
-        
+        cin >> a >> b >> n;
+        ans = b;
+
+        fore (i,0,n){
+            cin >> tmp;
+            ans += min(a-1, tmp);
+        }
+
+        cout << ans << nl;
     }
 }

@@ -19,9 +19,17 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
+        ll a[3];
 
-        
+        cin >> a[0] >> a[1] >> a[2];
+
+        sort (a, a+3);
+
+        if (a[2]%a[0] == 0 && a[1]%a[0] == 0){
+            if (a[2]/a[0]-1 + a[1]/a[0]-1 <= 3) cout << yes;
+            else cout << no;
+        } else {
+            cout << no;
+        }
     }
 }

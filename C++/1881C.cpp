@@ -1,3 +1,4 @@
+//1881C
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #include <bits/stdc++.h>
@@ -19,9 +20,19 @@ int main() {
 
     ll t; cin >> t;
     while (t--){
-        ll l, r;
-        cin >> l >> r;
+        ll n;
+        cin >> n;
 
-        
+        string s[n];
+
+        fore (i,0,n){
+            cin >> s[i];
+        }
+
+        fore (i,0,n){
+            fore (j,0,n/2){
+                
+            }
+        }
     }
 }
