@@ -13,31 +13,41 @@ typedef unsigned long long ull;
 #define no "NO\n"
 using namespace std;
 
-ll p[300007];
-ll MAX[300007], MIN[300007], sz[300007];
+ll p[200005], sz[200005], sum[200005];
+bool chk[200005];
 
-ll find(ll a){
-    if (a == p[a]) return a;
-    else return p[a] = find(p[a]);
+ll nenTong (ll a){
+    if (a == p[a] || p[p[a]] == p[a]) return sum[a];
+    return sum[a] -= nenTong(p[a]);
 }
 
-void merge (ll a, ll b){
+ll find (ll a){
+    if (a == p[a]) return a;
+    nenTong(a);
+    return p[a] = find(p[a]);
+}
+
+void merge(ll a, ll b){
     ll ra = find(a);
     ll rb = find(b);
 
     if (ra != rb){
-        if (sz[ra] > sz[rb]){
+        if (sz[a] >= sz[b]){
+            sum[rb] -= sum[ra];
             p[rb] = ra;
-            if (MAX[rb] > MAX[ra]) MAX[ra] = MAX[rb];
-            if (MIN[rb] < MIN[ra]) MIN[ra] = MIN[rb];
             sz[ra] += sz[rb];
         } else {
+            sum[ra] -= sum[rb];
             p[ra] = rb;
-            if (MAX[rb] < MAX[ra]) MAX[rb] = MAX[ra];
-            if (MIN[rb] > MIN[ra]) MIN[rb] = MIN[ra];     
-            sz[rb] += sz[ra];       
+            sz[rb] += sz[ra];
         }
     }
+}
+
+ll get(ll a, ll ans){
+    if (a == p[a]) return ans += sum[a];
+    ans += sum[a];
+    return get(p[a], ans);
 }
 
 int main() {
@@ -45,30 +55,32 @@ int main() {
     cout.tie(0); cin.tie(0);
 
     ll n, m;
+
     cin >> n >> m;
 
     fore (i,0,n+1){
         p[i] = i;
-        MAX[i] = i;
-        MIN[i] = i;
         sz[i] = 1;
     }
 
     string s;
-    ll a, b;
+    ll a, b, tmp, ra;
     fore (i,0,m){
         cin >> s;
+        if (s == "add"){
+            cin >> a >> b;
 
-        if (s == "union"){
+            ra = find(a);
+            sum[ra] += b;
+        } else if (s == "get"){
+            cin >> a;
+            ll ans = 0;
+            cout << get(a, ans) << nl;
+        } else {
             cin >> a >> b;
 
             merge(a, b);
-        } else {
-            cin >> a;
-
-            b = find(a);
-
-            cout << MIN[b] << " " << MAX[b] << " " << sz[b] << nl;
         }
     }
+    cout << sum[1] << sum[2] << sum[3];
 }

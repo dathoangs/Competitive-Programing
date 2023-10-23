@@ -13,14 +13,28 @@ typedef unsigned long long ull;
 #define no "NO\n"
 using namespace std;
 
-const int kMax = 1e3+5;
-vector<vector<pair<int,int>>> parent(kMax,vector<pair<int,int>>(kMax));
-
 int main() {
     ios::sync_with_stdio(0);
     cout.tie(0); cin.tie(0);
 
+    ll t; cin >> t;
+    while (t--){
+        string s;
+        cin >> s;
 
+        char cur = 1;
+        ll ans = 0;
 
+        fore (i,0,4){
+            if (s[i] == '0'){
+                ans += abs(cur - 10);
+                cur = 10;
+            } else {
+                ans += abs(cur - (s[i] - '0'));
+                cur = s[i] - '0';
+            }
+        }
 
+        cout << ans+4 << nl;
+    }
 }
