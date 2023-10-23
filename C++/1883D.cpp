@@ -17,30 +17,28 @@ int main() {
     ios::sync_with_stdio(0);
     cout.tie(0); cin.tie(0);
 
-    ll n;
-    cin >> n;
-
     char q;
-    ll x, y;
-    multiset <pair<ll, ll>> s;
+    ll a, b;
+    multiset <ll> l, r;
+    ll t; cin >> t;
+    while (t--){
+        cin >> q >> a >> b;
 
-    fore (i,0,n){
-        cin >> q >> x >> y;
+        if (q == '+'){
+            l.insert(a);
+            r.insert(b);
+        } else {
+            l.erase(l.find(a));
+            r.erase(r.find(b));
+        }
 
-        if (q == '+') s.insert({x, y});
-        else s.erase(s.find({x, y}));
-
-        if (s.size() <= 1) cout << no;
+        if (l.size() <= 1) cout << no;
         else {
-            bool chk = false;
-            auto j = --s.end();
-           
-            
-            L1:{
-                if (chk) cout << yes;
-                else cout << no;
+            if (*r.begin() < *(--l.end())){
+                cout << yes;
+            } else {
+                cout << no;
             }
         }
     }
-    
 }

@@ -28,7 +28,8 @@ int main() {
         fore (i,0,n){
             cin >> a[i];
         }
-
+        
+        map <ll, ll> mp;
         fore (i,0,n){ 
             if (a[i]%k == 0){
                 ans = 0;
@@ -36,8 +37,14 @@ int main() {
             }
 
             ans = min(ans, k - (a[i]%k));
+            a[i] %= k;
+            mp[a[i]]++;
+        }
 
-            
+        if (k == 4){
+            if (mp[2] > 1) ans = 0;
+            if (mp[1] > 1) ans = min(ans, (ll)2);
+            if (mp[1] && mp[2]) ans = min(ans, (ll)1);
         }
 
         cout << ans << nl;
