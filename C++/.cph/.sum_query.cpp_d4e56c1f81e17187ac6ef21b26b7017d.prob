@@ -1,0 +1,1 @@
+{"name":"Local: sum_query","url":"c:\\Users\\qdath\\Data\\Competitive\\C++\\sum_query.cpp","tests":[{"id":1700047765136,"input":"3 4 6 \n2 4 5 \n3 1 3 3 4 \n1 1 4\n2 2 3\n3 1 1 2 3\n3 2 1 3 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\Competitive\\C++\\sum_query.cpp","group":"local","local":true}

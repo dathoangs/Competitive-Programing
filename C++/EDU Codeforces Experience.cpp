@@ -1,5 +1,4 @@
-#pragma GCC optimize("O3,unroll-loops")
-#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+
 #include <bits/stdc++.h>
 typedef long long ll;
 typedef unsigned long long ull;
@@ -13,48 +12,44 @@ typedef unsigned long long ull;
 #define no "NO\n"
 using namespace std;
 
-ll p[200005], sz[200005], sum[200005];
-bool chk[200005];
+int p[200005], sz[200005], point[200005], extra[200005];
 
-ll nenTong (ll a){
-    if (a == p[a] || p[p[a]] == p[a]) return sum[a];
-    return sum[a] -= nenTong(p[a]);
-}
-
-ll find (ll a){
+int find (ll a){
     if (a == p[a]) return a;
-    nenTong(a);
-    return p[a] = find(p[a]);
+    else return find(p[a]);
 }
 
-void merge(ll a, ll b){
-    ll ra = find(a);
-    ll rb = find(b);
+void merge(int a, int b){
+    int ra = find(a);
+    int rb = find(b);
 
     if (ra != rb){
-        if (sz[a] >= sz[b]){
-            sum[rb] -= sum[ra];
+        if (sz[a] > sz[b]){
+            extra[rb] = point[ra];
             p[rb] = ra;
             sz[ra] += sz[rb];
         } else {
-            sum[ra] -= sum[rb];
+            extra[ra] = point[rb];
             p[ra] = rb;
             sz[rb] += sz[ra];
         }
     }
 }
 
-ll get(ll a, ll ans){
-    if (a == p[a]) return ans += sum[a];
-    ans += sum[a];
-    return get(p[a], ans);
+int get(int a){
+    int amt = point[a];
+    if (p[a] == a) {
+        return amt;
+    }
+    amt += get(p[a]) - extra[a];
+    return amt;
 }
 
 int main() {
     ios::sync_with_stdio(0);
     cout.tie(0); cin.tie(0);
 
-    ll n, m;
+    int n, m;
 
     cin >> n >> m;
 
@@ -64,23 +59,20 @@ int main() {
     }
 
     string s;
-    ll a, b, tmp, ra;
-    fore (i,0,m){
+    int a, b, tmp, ra;
+    while (m--){
         cin >> s;
         if (s == "add"){
             cin >> a >> b;
-
             ra = find(a);
-            sum[ra] += b;
+
+            point[ra] += b;
         } else if (s == "get"){
             cin >> a;
-            ll ans = 0;
-            cout << get(a, ans) << nl;
+            cout << get(a) << nl;
         } else {
             cin >> a >> b;
-
             merge(a, b);
         }
     }
-    cout << sum[1] << sum[2] << sum[3];
 }

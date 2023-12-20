@@ -1,0 +1,1 @@
+{"name":"Local: 1914A","url":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1914A.cpp","tests":[{"id":1702996684366,"input":"3\n6\nACBCBC\n7\nAAAAFPC\n22\nFEADBBDFFEDFFFDHHHADCC\n","output":"3\n1\n4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1914A.cpp","group":"local","local":true}

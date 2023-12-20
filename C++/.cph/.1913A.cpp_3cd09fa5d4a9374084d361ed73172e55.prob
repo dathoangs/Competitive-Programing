@@ -1,0 +1,1 @@
+{"name":"Local: 1913A","url":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1913A.cpp","tests":[{"id":1702910510332,"input":"5\n20002001\n391125\n200200\n2001000\n12\n","output":"2000 2001\n39 1125\n-1\n200 1000\n1 2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\Competitive\\C++\\1913A.cpp","group":"local","local":true}

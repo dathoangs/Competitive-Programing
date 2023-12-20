@@ -17,7 +17,7 @@ ll p[100007], sz[100007];
 
 ll find (ll u){
     if (u == p[u]) return u;
-    else return p[u] = find(p[u]);
+    return p[u] = find(p[u]);
 }
 
 void merge(ll a, ll b){

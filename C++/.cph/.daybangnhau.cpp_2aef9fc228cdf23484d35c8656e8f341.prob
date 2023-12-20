@@ -1,0 +1,1 @@
+{"name":"Local: daybangnhau","url":"c:\\Users\\qdath\\Data\\Competitive\\C++\\daybangnhau.cpp","tests":[{"id":1699797267107,"input":"5 2\n5 1 3 3 5","output":"4"},{"id":1699797284895,"input":"2 100\n1 10","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\qdath\\Data\\Competitive\\C++\\daybangnhau.cpp","group":"local","local":true}
